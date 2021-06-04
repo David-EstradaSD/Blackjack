@@ -1,7 +1,7 @@
 # Blackjack Application
 
 #### Overview
-This program simulates a Jet application wherein Jets are populated into a virtual airfield, in which the user can interact with. Initially, the airfield consists of jets from an existing text file, but may be further manipulated through user input.
+This program simulates a Blackjack Game application wherein
 
 #### Technical Skills Used
 * Java and Eclipse IDE
