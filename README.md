@@ -1,7 +1,7 @@
 # Blackjack Application
 
 #### Overview
-This program simulates a Blackjack Game application wherein
+This program simulates a Blackjack Application wherein the user can play a one-round game of blackjack against the program. The user initially receives two cards and can interact by deciding whether to stand or hit until the total value of their cards reaches twenty-one or they bust.
 
 #### Technical Skills Used
 * Java and Eclipse IDE
@@ -9,13 +9,13 @@ This program simulates a Blackjack Game application wherein
 * Object-Oriented design
 * Encapsulation (getter methods)
 * Collection Types (Lists)
-* Polymorphism / Inheritance
+* Inheritance
 * Constructor methods
 * Conditionals (if statements / while loops)
 * User input with Scanner
 
 #### How to Run
-This program runs on Eclipse and ...
+This program runs on Eclipse and requires user input through a keyboard to simulate a player's action (game moves) in a blackjack game.
 
 #### Lessons Learned
-I have learned how Object-Oriented Programming revolves around 
+I learned how to properly design the class structure of Object-Oriented Programming; more specifically, how to utilize several Java directories and multiple classes within those directories to reinforce encapsulation and appropriate organization. Additionally, I learned that when designing an application that involves multiple method-interactions between objects from different classes, whether in the same Java package or not, it is helpful to pass the objects themselves into the methods' parameters, rather than instantiate those objects within each method. This is to ensure that the application's various classes and methods are referring to the same object in memory.

@@ -11,58 +11,54 @@ public class Player {
 	PlayerHand playerHand = new PlayerHand();
 	private int blackjack = 21;
 
-//	private int playerStartingHandValue() {
-//	int ripValue = playerHand.getHandValue();
-//	if (ripValue == 21) {
-//		System.out.println("Whoo-hoo! You got Blackjack off rip! Nice hand!");
-//		app.displayPlayerWinner();
-//	}
-//	return ripValue;
-//}
-
-	public void playersAction() {
-		Dealer dealer = new Dealer();
-		String hitOrNot = "";
-		boolean keepHitting = true;
-
-		while (keepHitting) {
-			if (playerHand.getHandValue() < blackjack) {
-				System.out.println("Would you like to stand or hit?");
-				hitOrNot = sc.nextLine();
-				if (hitOrNot.equalsIgnoreCase("hit")) {
+	public void playersAction(Dealer dealer) { 	// we pass the Dealer object to ensure
+		String hitOrStand = ""; 				// our reference to Dealer is consistent
+		boolean playersTurn = true;
+		while (playersTurn) {
+				System.out.print("Would you like to stand or hit? ");
+				hitOrStand = sc.nextLine();
+				if (hitOrStand.equalsIgnoreCase("hit")) {
 					playerHits();
-					if (playerHand.getHandValue() == 21) {
+					if (playerHand.getHandValue() == blackjack) {
 						System.out.println("You reached 21, nice.");
-						keepHitting = false;
+						playersTurn = false;
 					}
-					
 					if (playerHand.getHandValue() > blackjack) {
 						System.out.println("Ah, shucks! You busted over 21.");
 						dealer.displayDealerWinner();
 						System.exit(0);
 					}
-					
-				} else if (hitOrNot.equalsIgnoreCase("stand")) {
+				} else if (hitOrStand.equalsIgnoreCase("stand")) {
 					System.out.println("Player stands on: " + playerHand.getHandValue());
-					keepHitting = false;
+					playersTurn = false;
 				}
-
-			}
 		}
+		sc.close();
 	}
 
-	public void playerStartingHand() {
-		int playerCards = 2;
-		for (int i = 0; i < playerCards; i++) {
+	public void playerStartingHand(Dealer dealer) {
+		int startingHand = 2;
+		for (int i = 0; i < startingHand; i++) {
 			deck.shuffle();
 			playerHand.addCard(deck.dealCard());
 		}
 		System.out.println("Your starting hand: ");
 		playerHand.displayHand();
-		System.out.println();
-		System.out.println("Your current hand: " + playerHand.getHandValue());
-		if (playerHand.getHandValue() == 21) {
+		System.out.println("\nYour current hand: " + playerHand.getHandValue());
+		if (playerHand.getHandValue() == blackjack) {
 			System.out.println("\nWhoo-hoo! You got Blackjack off rip! Nice hand!");
+			displayPlayerWinner();
+			System.exit(0);
+		} else if (playerHand.getHandValue() > blackjack) {
+			System.out.println("Player busts from two Aces!");
+			dealer.displayDealerWinner();
+			System.exit(0);
+		} else if (dealer.dealerHand.getHandValue() == blackjack) {
+			System.out.println("\nHoly guacamole! Dealer got Blackjack. Better luck next time.");
+			dealer.displayDealerWinner();
+			System.exit(0);
+		} else if (dealer.dealerHand.getHandValue() > blackjack) {
+			System.out.println("Dealer busts from two Aces!");
 			displayPlayerWinner();
 			System.exit(0);
 		}
@@ -71,14 +67,13 @@ public class Player {
 
 	public void playerHits() {
 		playerHand.addCard(deck.dealCard());
-		System.out.println("Your current hand: " + playerHand.getHandValue());
+		playerHand.displayHand();
+		System.out.println("\nYour current hand: " + playerHand.getHandValue());
 
 	}
 
 	public void displayPlayerWinner() {
 		System.out.println("\nPlayer wins.\n");
 	}
-	
-	
 
 }

@@ -5,8 +5,6 @@ import com.skilldistillery.blackjack.common.Hand;
 
 public class PlayerHand extends Hand {
 
-//	private List<Card> cards = new ArrayList<>();
-
 	@Override
 	public void addCard(Card card) {
 		super.addCard(card);

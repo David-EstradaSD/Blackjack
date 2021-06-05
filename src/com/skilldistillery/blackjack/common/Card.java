@@ -13,11 +13,6 @@ public class Card {
 	@Override
 	public String toString() {			// (3) simple toString
 		return rank + " of " + suit;
-//		StringBuilder builder = new StringBuilder();		<< fancier option
-//		builder.append(rank);
-//		builder.append(" of ");
-//		builder.append(suit);
-//		return builder.toString();
 	}
 
 	public int getValue() {			// (4) we use rank.getValue() bc we know in our rank class
