@@ -25,11 +25,11 @@ public class Deck {
 		
 	}
 	
-	public Card dealCard() {				// (3) we just use our deckOfCards to call its remove() method
+	public Card dealCard() {				// we just use our deckOfCards to call its remove() method
 		return deckOfCards.remove(0);		// we return the size of the deck which is object Card
 	}
 	
-	public void shuffle() {					// (4) we have to use superclass collections to call its method .shuffle
-		Collections.shuffle(deckOfCards);	// passing in our List (deckOfCards)
+	public void shuffle() {					
+		Collections.shuffle(deckOfCards);	
 	}
 }

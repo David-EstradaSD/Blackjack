@@ -12,7 +12,7 @@ public enum Rank {
 		this.value = v;
 	}
 	
-	public int getValue() {		// we can use our Source to auto generate a getter method
+	public int getValue() {	
 		return value;
 	}
 

@@ -3,8 +3,7 @@ package com.skilldistillery.blackjack.common;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BlackjackHand {
-	
+public abstract class Hand {
 	private List<Card> cards = new ArrayList<>();
 	
 	public void addCard(Card card) {
@@ -26,11 +25,12 @@ public class BlackjackHand {
 	
 	public void displayHand() {
 		if (cards.size() == 0) {
-			System.out.println("No cards."); 
+			System.out.print("No cards."); 
 		} 
 		else {
 			for (Card card : cards) {
-				System.out.println(card);
+				System.out.print(card);
+				System.out.print(" ");
 			}
 		}
 	}

@@ -8,14 +8,14 @@ This program simulates a Blackjack Game application wherein
 * Enumerated Types (Enums)
 * Object-Oriented design
 * Encapsulation (getter methods)
-* Collection (Lists)
+* Collection Types (Lists)
 * Polymorphism / Inheritance
 * Constructor methods
-* For loops and while loops
+* Conditionals (if statements / while loops)
 * User input with Scanner
 
 #### How to Run
 This program runs on Eclipse and ...
 
 #### Lessons Learned
-I have learned how Polymorphism and Inheritance coexist and we cannot have the former without the latter. I became more comfortable with the instanceof() operator to use a superclass's methods to perform a task for its subclass, as well as the BufferedReader and FileReader to utilize a text file's data for a Java application.
+I have learned how Object-Oriented Programming revolves around 
