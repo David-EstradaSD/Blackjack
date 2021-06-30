@@ -9,7 +9,7 @@ public class Deck {
 	private List<Card> deckOfCards;
 
 	public Deck() {
-		deckOfCards = new ArrayList<>(52); 		// (1) we set our ArrayList to 52 cards
+		deckOfCards = new ArrayList<>(52); 		//  we set our ArrayList to 52 cards
 		for (Rank r : Rank.values()) { 			// we use our .values method to establish arrays for Suit and Rank
 			for (Suit s : Suit.values()) {
 				deckOfCards.add(new Card(r, s)); // add a new Card(Rank, Suit) of type rank r and suit s to our ArrayList (deckOfCards)

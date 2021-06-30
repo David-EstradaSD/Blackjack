@@ -10,6 +10,7 @@ public class Player {
 	private Scanner sc = new Scanner(System.in);
 	PlayerHand playerHand = new PlayerHand();
 	private int blackjack = 21;
+	Dealer d1 = new Dealer();
 
 	public void playersAction(Dealer dealer) { 	// we pass the Dealer object to ensure
 		String hitOrStand = ""; 				// our reference to Dealer is consistent
@@ -35,32 +36,59 @@ public class Player {
 		}
 		sc.close();
 	}
-
+	
+// add labels and fix this system.exit intentional crash
+	
+	
 	public void playerStartingHand(Dealer dealer) {
+		Player p1 = new Player();
+		boolean keepPlaying = true;
 		int startingHand = 2;
 		for (int i = 0; i < startingHand; i++) {
 			deck.shuffle();
 			playerHand.addCard(deck.dealCard());
 		}
+		
+		while (keepPlaying) {
+			
+		
 		System.out.println("Your starting hand: ");
 		playerHand.displayHand();
 		System.out.println("\nYour current hand: " + playerHand.getHandValue());
+		
+	
 		if (playerHand.getHandValue() == blackjack) {
 			System.out.println("\nWhoo-hoo! You got Blackjack off rip! Nice hand!");
-			displayPlayerWinner();
-			System.exit(0);
-		} else if (playerHand.getHandValue() > blackjack) {
+//			displayPlayerWinner();
+			keepPlaying = false;
+//			break InstantBlackJack;	
+		
+		} 
+		else if (playerHand.getHandValue() > blackjack) {
 			System.out.println("Player busts from two Aces!");
 			dealer.displayDealerWinner();
-			System.exit(0);
-		} else if (dealer.dealerHand.getHandValue() == blackjack) {
+			keepPlaying = false;
+//			break PlayerBusts;
+			
+			
+		} 
+		else if (dealer.dealerHand.getHandValue() == blackjack) {
 			System.out.println("\nHoly guacamole! Dealer got Blackjack. Better luck next time.");
 			dealer.displayDealerWinner();
-			System.exit(0);
-		} else if (dealer.dealerHand.getHandValue() > blackjack) {
+			keepPlaying = false;
+//			break DealerBlackJack;
+			
+			
+		} 
+		else if (dealer.dealerHand.getHandValue() > blackjack) {
 			System.out.println("Dealer busts from two Aces!");
 			displayPlayerWinner();
-			System.exit(0);
+			keepPlaying = false;
+//			break DealerBusts; 
+		}
+		else {
+			p1.playersAction(d1);
+		}
 		}
 
 	}

@@ -2,20 +2,25 @@ package com.skilldistillery.blackjack.app;
 
 public class BlackjackApp {
 
-	static BlackjackApp app = new BlackjackApp();
 	Player player = new Player();
 	Dealer dealer = new Dealer();
 
 	public static void main(String[] args) {
+		BlackjackApp app = new BlackjackApp();
 		app.printWelcomeMenu();
-		app.deal();
+		app.play();
 	}
 
-	private void deal() {
+	private void play() {
 		dealer.dealerStartingHand(player);
 		player.playerStartingHand(dealer);
-		player.playersAction(dealer);
+//		player.playersAction(dealer);
 		dealer.dealersAction(player);
+	}
+	
+	
+	private void playAgain() {
+		
 	}
 
 	private void printWelcomeMenu() {
