@@ -1,26 +1,45 @@
 package com.skilldistillery.blackjack.app;
 
-public class BlackjackApp {
+import java.util.Scanner;
 
-	Player player = new Player();
-	Dealer dealer = new Dealer();
+public class BlackjackApp {
 
 	public static void main(String[] args) {
 		BlackjackApp app = new BlackjackApp();
+		boolean keepPlaying = true;
+		int input = 1;
+
 		app.printWelcomeMenu();
-		app.play();
+		while (keepPlaying) {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Would you like to play?");
+			System.out.println("Enter 1 to play or 0 to quit");
+			input = sc.nextInt();
+			sc.nextLine();
+
+			switch (input) {
+			case 0:
+				System.out.println("Thanks for visiting BestBet Virtual Blackjack!");
+				keepPlaying = false;
+				break;
+			case 1:
+				app.play();
+				break;
+			default:
+				System.err.println("Invalid entry. Enter \"1\" or \"0\"");
+			}
+
+			sc.close();
+		}
 	}
 
 	private void play() {
-		dealer.dealerStartingHand(player);
-		player.playerStartingHand(dealer);
-//		player.playersAction(dealer);
+		Player player = new Player();
+		Dealer dealer = new Dealer();
+		dealer.dealerStartingHand();
+		player.playerStartingHand();
+//		player.playersAction();
 		dealer.dealersAction(player);
-	}
-	
-	
-	private void playAgain() {
-		
 	}
 
 	private void printWelcomeMenu() {

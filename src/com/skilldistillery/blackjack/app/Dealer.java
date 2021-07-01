@@ -12,7 +12,10 @@ public class Dealer {
 	public void dealersAction(Player player) {		// rather than instantiating a new Player
 		boolean dealersTurn = true;					// we can reference the same player object throughout all classes
 		while (dealersTurn) {
-			if (dealerHand.getHandValue() <= hitValue) {
+			if (player.playerHand.getHandValue() >= blackjack) {
+				dealersTurn = false;
+			}
+			else if (dealerHand.getHandValue() <= hitValue ) {
 				dealerHits();
 				if (dealerHand.getHandValue() > blackjack) {
 					System.out.println("Dealer busts!");
@@ -38,7 +41,7 @@ public class Dealer {
 		}
 	}
 
-	public void dealerStartingHand(Player player) {
+	public void dealerStartingHand() {
 
 		int dealerCards = 2;
 		for (int i = 0; i < dealerCards; i++) {
@@ -47,7 +50,7 @@ public class Dealer {
 		}
 		System.out.println("Dealer starting hand: ");
 		dealerHand.displayHand();
-		System.out.println("\nCurrent dealer hand: " + dealerHand.getHandValue() + "\n");
+		System.out.println("\nCurrent hand value: " + dealerHand.getHandValue() + "\n");
 	}
 
 	public void dealerHits() {
