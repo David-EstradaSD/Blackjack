@@ -1,7 +1,7 @@
 # Blackjack Application
 
 #### Overview
-This program simulates a Blackjack Application wherein the user can play a one-round game of blackjack against the program. The user initially receives two cards and can interact by deciding whether to stand or hit until the total value of their cards reaches twenty-one or they bust.
+This program simulates a Blackjack Application wherein the user can play a variant of the card game  blackjack against the program. The user initially receives two cards and can interact by deciding whether to stand or hit until the total value of their cards reaches twenty-one or they bust. The user can choose to play as many times as they wish until they choose to exit the application.
 
 #### Technical Skills Used
 * Java and Eclipse IDE
