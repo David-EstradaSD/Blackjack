@@ -8,7 +8,7 @@ public class BlackjackApp {
 		BlackjackApp app = new BlackjackApp();
 		boolean keepPlaying = true;
 		int input = 1;
-
+// FIX THIS BUG "NOSUCHELEMENTEXCEPTION" from the Scanner !!!
 		app.printWelcomeMenu();
 		while (keepPlaying) {
 			Scanner sc = new Scanner(System.in);
