@@ -19,7 +19,7 @@ The player ( _you_ ) initially receives two cards and can interact by deciding w
 ### How to Run
 You'll need a basic editor ( Eclipse, VS Code ) with installed extensions for JDK ( _Java_ ). Then Git Clone the source code into a file ( _usually done through your local terminal_ ). Open the saved file in your editor and access the Console tab ( _Eclipse_ ) or Terminal window ( _VS Code_ ) and run the application as a Java app. Your actions ( _moves_ ) are performed by typing input on your keyboard for a menu selection.
 
-##### tl;dr
+#### tl;dr
 
 Any IDE with JDK installed and a CLI
 
