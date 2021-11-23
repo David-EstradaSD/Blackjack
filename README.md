@@ -1,7 +1,7 @@
 # _Blackjack_
 
 ### Overview
-This application simulates a Blackjack casino game wherein the user can play a variant of the card game blackjack against the dealer ( _computer_ ).
+This application simulates a _Blackjack_ casino game wherein the user can play a variant of the card game _Blackjack_ against the dealer ( _computer_ ).
 
 ### Game Rules
 The player ( _you_ ) initially receives two cards and can interact by deciding whether to _stand_ or _hit_ until the _total value_ of their cards reaches 21 or they bust. The user can play as many rounds as they wish, until they choose to exit the application.
