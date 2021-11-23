@@ -7,14 +7,14 @@ This application simulates a _Blackjack_ casino game wherein the user can play a
 The player ( _you_ ) initially receives two cards and can interact by deciding whether to _stand_ or _hit_ until the _total value_ of their cards reaches 21 or they bust. The user can play as many rounds as they wish, until they choose to exit the application.
 
 ### Technologies Used
-* Java / JEE
+* Java 8
 * Object-Oriented design:
   * Inheritance & Polymorphism
   * Encapsulation
   * Abstraction
 * Collection Types (Lists)
 * Conditionals & loops
-* Java's Scanner ( _user interaction_ )
+* Java's Scanner ( _user input & interaction_ )
 
 ### How to Run
 You'll need a basic editor ( Eclipse, VS Code ) with installed extensions for JDK ( _Java_ ). Then Git Clone the source code into a file ( _usually done through your local terminal_ ). Open the saved file in your editor and access the Console tab ( _Eclipse_ ) or Terminal window ( _VS Code_ ) and run the application as a Java app. Your actions ( _moves_ ) are performed by typing input on your keyboard for a menu selection.
